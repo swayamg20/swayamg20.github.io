@@ -4,14 +4,14 @@ export const siteMeta = {
 }
 
 export const hero = {
-  label: 'Software engineer · Voice and conversational systems',
-  headline: 'I build voice systems that hold up in production.',
+  label: 'Software engineer · Agent systems',
+  headline: 'I build the infrastructure that agents run on.',
   description:
-    'At ixigo, I built the voice pipeline behind an agent that now handles tens of thousands of calls a day. As it grew, I built the things I wished I had from day one: an agent harness, observability, and evaluations. Together, they make failed conversations easier to reproduce and fix.',
+    'At ixigo, that means agent harnesses, multi-agent orchestration, tools, memory, observability, and evaluations. One application of this work now handles tens of thousands of calls a day. I have applied the same engineering to travel and developer tooling—the domain changes, but the systems thinking carries over.',
   highlights: [
-    'tens of thousands of calls a day',
-    'voice pipeline + agent harness',
-    'production traces → evaluations → fixes',
+    'agent harnesses · multi-agent orchestration',
+    'tools · memory · observability · evaluations',
+    'voice · travel · developer tooling',
   ],
   primaryLink: {
     label: 'View my public work',
@@ -26,7 +26,7 @@ export const experience = [
     companyUrl: 'https://www.ixigo.com',
     period: "Aug'24 — present",
     description:
-      "At ixigo, I build conversational AI systems. I engineered the in-house voice pipeline, built an agent harness, and built the observability product we use to trace and evaluate conversations. The goal was not another dashboard; it was a feedback loop that could turn failures into fixes. I now bring the same thinking to ixigo's in-app multimodal agent.",
+      "At ixigo, I build agent systems. My work spans the agent harness, multi-agent orchestration, tools, memory, observability, and evaluations. I first applied this work to our in-house conversational agent, including its voice pipeline; it now handles tens of thousands of calls a day. I now use the same building blocks for ixigo's in-app multimodal agent.",
   },
   {
     role: 'Founding Engineer',
@@ -42,7 +42,7 @@ export const sections = [
   {
     id: 'projects',
     title: 'Selected Work',
-    intro: 'A few things I have built, from production voice systems to small public experiments.',
+    intro: 'A few things I have built, from production systems to small public experiments.',
     items: [
       {
         slug: 'reel2trip',
