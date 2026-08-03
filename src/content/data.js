@@ -14,8 +14,8 @@ export const hero = {
     'production traces → evaluations → fixes',
   ],
   primaryLink: {
-    label: 'Read how the system grew',
-    href: '/entry/projects/ixigo-conversational-ai',
+    label: 'View my public work',
+    href: 'https://github.com/swayamg20',
   },
 }
 
@@ -44,26 +44,6 @@ export const sections = [
     title: 'Selected Work',
     intro: 'A few things I have built, from production voice systems to small public experiments.',
     items: [
-      {
-        slug: 'ixigo-conversational-ai',
-        title: 'Conversational AI at ixigo',
-        meta: 'Production · Tens of thousands of calls/day · Built in-house',
-        summary:
-          'It started as a voice pipeline. As call volume grew, I built the missing pieces around it: an agent harness, observability, evaluations, and a path from a failed call back to a fix.',
-        stack: ['Real-time voice', 'Agent harness', 'Production tracing', 'Automated evaluations', 'Targeted remediation'],
-        status: 'In production at ixigo · Private system',
-        links: [],
-        content: {
-          howItGrew:
-            "It began with the voice pipeline for ixigo's conversational agent. The agent now handles tens of thousands of calls a day on an in-house stack. At that scale, making a call work was only half the problem; we also needed to understand why a conversation failed.",
-          whatIBuilt:
-            'I engineered the pipeline, built the agent harness, and built the observability and evaluation product around it.',
-          theFeedbackLoop:
-            'A production conversation is traced and evaluated with its surrounding context. That gives us a path from “this call went wrong” to a reproducible case and, for selected failure modes, an automated remediation workflow.',
-          whatICanShare:
-            'The system and its data are private, so I keep the public description to the problems I owned and the way the pieces fit together.',
-        },
-      },
       {
         slug: 'reel2trip',
         title: 'Reel2Trip',
