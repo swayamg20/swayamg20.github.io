@@ -1,20 +1,20 @@
 ---
-title: I Built a Voice-Enabled Travel Agent in 4 Hours on OpenClaw
+title: What I learned building a voice travel agent in four hours
 date: Mar 1, 2026
 readTime: 10 min read
-subtitle: The full stack, every integration decision, and what I learned building on a platform that's 3 months old and moving fast.
-summary: The full stack, every integration decision, and what I learned building on a platform that's 3 months old and moving fast.
-heroLabel: Buildathon Diary · March 2026
+subtitle: A buildathon note on composing skills, tools, and voice without writing a custom backend.
+summary: A buildathon note on composing skills, tools, and voice without writing a custom backend.
+heroLabel: Buildathon notes · March 2026
 authorName: Swayam Gupta
-authorMeta: AI/Voice Engineer at ixigo · IIT Kanpur '24
+authorMeta: Mar 2026 · Software Engineer at ixigo
 tags: OpenClaw, Voice AI, AI Agents, Buildathon, Travel Tech, ElevenLabs, Whisper
 ---
 
-Last weekend I attended India's first OpenClaw Buildathon — 4 hours, solo builds, no teams. I shipped TripClaw: a Telegram bot that discovers destinations by vibe, plans day-wise itineraries, searches real flights with live prices, adds everything to Google Calendar, and talks back to you in voice.
+At India's first OpenClaw Buildathon, I gave myself one constraint: four hours, one person, and a travel flow that had to work from end to end.
 
-The judge said it was his favorite build.
+By the deadline, TripClaw could take voice or text in Telegram, suggest a destination, build an itinerary, search live flight prices, add the plan to Google Calendar, and reply in voice. The judge called it his favorite build.
 
-This is not a "look what I made" post. This is the full architecture, every integration decision, and what I learned about building on a platform that's 3 months old and moving fast.
+The interesting part was not the feature count. I had written almost no custom backend. Most of the behavior lived in Markdown skills and a few CLI tools. These are my notes on what that architecture made easy, and where it pushed the complexity instead.
 
 ---
 

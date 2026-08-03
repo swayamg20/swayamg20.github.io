@@ -1,8 +1,8 @@
 ---
-title: Unlock Lightning-Fast Lottie Loads with IndexedDB Persistence
+title: Caching Lottie assets in IndexedDB
 date: Apr 7, 2025
 readTime: 6 min read
-summary: Improving large animation load performance by caching heavy assets in IndexedDB.
+summary: A small performance fix for repeat visits: store large animation assets locally and avoid downloading them again.
 heroLabel: Frontend Performance
 subtitle: How persistent client-side caching turned 800ms animation loads into near-instant replays.
 authorName: Swayam

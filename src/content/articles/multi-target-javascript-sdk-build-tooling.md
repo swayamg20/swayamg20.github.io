@@ -1,8 +1,8 @@
 ---
-title: Building a Multi-Target JavaScript SDK
+title: Shipping one JavaScript SDK to web, React Native, and Node
 date: Aug 17, 2025
 readTime: 8 min read
-summary: How to build one JavaScript codebase and ship it cleanly to multiple deployment targets.
+summary: Notes on build boundaries, package exports, and keeping target-specific code out of the core.
 heroLabel: Build Systems
 subtitle: One codebase, multiple outputs — structuring an SDK that ships to web, React Native, and Node without duplicating anything.
 authorName: Swayam

@@ -46,7 +46,8 @@ function humanizeKey(key) {
   }
   if (KEY_OVERRIDES[key]) return KEY_OVERRIDES[key]
   const spaced = key.replace(/([A-Z])/g, ' $1').trim()
-  return spaced.charAt(0).toUpperCase() + spaced.slice(1).toLowerCase()
+  const sentenceCase = spaced.charAt(0).toUpperCase() + spaced.slice(1).toLowerCase()
+  return sentenceCase.replace(/\bi\b/g, 'I')
 }
 
 function GoogleAnalytics() {
@@ -308,18 +309,22 @@ function HomePage() {
         <div className="hero-content">
           <p className="mono section-label">{hero.label.toUpperCase()}</p>
           <h1 className="hero-heading">
-            <span className="hero-heading-intro">Hi, I am </span>
-            <span className="hero-heading-name">Swayam Gupta</span>
+            <span className="hero-heading-intro">{hero.headline}</span>
+            <span className="hero-heading-name">{siteMeta.name}</span>
           </h1>
           <div className="rule" />
           <p className="description">{renderInlineCode(hero.description)}</p>
           <ul className="hero-bracket mono" aria-label="Highlights">
-            <li>multi-agent orchestrator · ~30 tools · LiveKit WebRTC pipeline</li>
-            <li>custom Zep-compatible memory layer · LLM tracing via Langfuse</li>
-            <li>30K+ AI-handled calls/day · 3 open-source agent tools shipped</li>
+            {hero.highlights.map((highlight) => (
+              <li key={highlight}>{highlight}</li>
+            ))}
           </ul>
           <p className="hero-inline-link mono">
-            <a href="https://github.com/swayamg20/AgentRelay" target="_blank" rel="noreferrer">→ AgentRelay on GitHub</a>
+            {hero.primaryLink.href.startsWith('/') ? (
+              <Link to={hero.primaryLink.href}>→ {hero.primaryLink.label}</Link>
+            ) : (
+              <a href={hero.primaryLink.href} target="_blank" rel="noreferrer">→ {hero.primaryLink.label}</a>
+            )}
           </p>
         </div>
       </section>
@@ -490,8 +495,8 @@ function SectionEntryPage() {
           {sectionId === 'projects' ? (
             <ContactForm
               subject={`/${slug}: question or comment`}
-              heading={`Question or comment about ${entry.title}?`}
-              subtext="Drop a note — goes straight to my inbox, tagged by project."
+              heading={`Want to talk about ${entry.title}?`}
+              subtext="Send me a note."
               className="contact-form-compact"
             />
           ) : null}

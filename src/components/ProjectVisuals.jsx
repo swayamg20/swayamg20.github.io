@@ -55,7 +55,7 @@ export function AgentRelayVisual() {
     <figure className="project-visual">
       <svg viewBox="0 0 600 180" role="img" aria-label="AgentRelay handoff flow" preserveAspectRatio="xMidYMid meet">
         <Box x={20} y={70} w={120} h={48} label="Bob's agent" sublabel="backend" />
-        <Box x={230} y={70} w={140} h={48} label="Postgres relay" sublabel="provenance + audit" accent />
+        <Box x={230} y={70} w={140} h={48} label="Postgres relay" sublabel="auth + message state" accent />
         <Box x={460} y={70} w={120} h={48} label="Frank's agent" sublabel="frontend" />
 
         <Arrow x1={140} y1={86} x2={230} y2={86} label="handoff_to_teammate" />
@@ -63,10 +63,10 @@ export function AgentRelayVisual() {
         <Arrow x1={460} y1={102} x2={370} y2={102} label="accept_handoff" dashed />
 
         <text x={300} y={150} fill={INK_SOFT} fontSize="10" fontFamily="DM Sans, sans-serif" textAnchor="middle">
-          state: proposed → in_progress → completed · idempotent · audit-logged
+          state: proposed → in_progress → completed
         </text>
       </svg>
-      <figcaption className="project-visual-caption mono">A2A handoff over Postgres-backed relay</figcaption>
+      <figcaption className="project-visual-caption mono">Asynchronous handoff through a Postgres-backed relay</figcaption>
     </figure>
   )
 }
@@ -84,7 +84,7 @@ export function MurmurVisual() {
           "Explain projectile motion."
         </text>
 
-        <text x={20} y={78} fill={INK_FAINT} fontSize="9" fontFamily="DM Sans, sans-serif" letterSpacing="1">LLM EMITS (SDL, ~80 tokens)</text>
+        <text x={20} y={78} fill={INK_FAINT} fontSize="9" fontFamily="DM Sans, sans-serif" letterSpacing="1">LLM EMITS (SEMANTIC SCENE)</text>
         <g fontFamily="JetBrains Mono, monospace" fontSize="11" fill={INK_SOFT}>
           <text x={20} y={98}>draw_axes(t_max=2s, h_max=20m)</text>
           <text x={20} y={114}>plot_parabola(launch=(0,0), peak=(1,18), land=(2,0))</text>
@@ -113,70 +113,12 @@ export function MurmurVisual() {
         {/* arrow connecting the two sides */}
         <Arrow x1={350} y1={100} x2={376} y2={100} />
       </svg>
-      <figcaption className="project-visual-caption mono">SDL → hand-drawn render (synced with TTS in real time)</figcaption>
+      <figcaption className="project-visual-caption mono">Semantic scene → deterministic browser render</figcaption>
     </figure>
   )
 }
 
-/* ─── 3. MCP OAuth Framework — before / after ─── */
-export function McpOAuthVisual() {
-  return (
-    <figure className="project-visual">
-      <div className="oauth-compare">
-        <div className="oauth-col oauth-before">
-          <p className="mono oauth-label">BEFORE — ~200 LINES</p>
-          <pre className="oauth-code">{`// PKCE setup
-const codeVerifier = generateCodeVerifier()
-const codeChallenge = await sha256(codeVerifier)
-
-// Authorize URL builder
-function buildAuthUrl(provider, scopes) {
-  const url = new URL(provider.authEndpoint)
-  url.searchParams.set('client_id', ...)
-  url.searchParams.set('redirect_uri', ...)
-  url.searchParams.set('code_challenge', codeChallenge)
-  url.searchParams.set('code_challenge_method', 'S256')
-  // ... 30 more lines
-}
-
-// Token storage (encrypted)
-function encryptToken(token) {
-  const iv = crypto.randomBytes(16)
-  const cipher = crypto.createCipheriv('aes-256-cbc', ...)
-  // ... another 40 lines
-}
-
-// Refresh logic, scope validation,
-// callback handler, tool registration ...
-// (≈140 more lines)`}</pre>
-        </div>
-        <div className="oauth-arrow" aria-hidden="true">→</div>
-        <div className="oauth-col oauth-after">
-          <p className="mono oauth-label oauth-label-accent">AFTER — ~20 LINES</p>
-          <pre className="oauth-code oauth-code-accent">{`import { BaseMCPServer } from '@sg20/mcp-oauth-framework'
-
-class GitHubMCP extends BaseMCPServer {
-  provider = 'github'
-  scopes  = ['repo', 'read:user']
-
-  tools = {
-    list_repos: async () =>
-      this.fetch('/user/repos'),
-    create_issue: async ({ repo, title, body }) =>
-      this.fetch(\`/repos/\${repo}/issues\`,
-                 { method: 'POST', body }),
-  }
-}
-
-new GitHubMCP().run()`}</pre>
-        </div>
-      </div>
-      <figcaption className="project-visual-caption mono">PKCE · AES-256 · refresh · multi-provider — handled</figcaption>
-    </figure>
-  )
-}
-
-/* ─── 4. Reel2Trip — 3-step pipeline ─── */
+/* ─── 3. Reel2Trip — 3-step pipeline ─── */
 export function Reel2TripVisual() {
   return (
     <figure className="project-visual">
@@ -215,7 +157,7 @@ export function Reel2TripVisual() {
         </g>
 
         <text x={300} y={20} fill={INK_FAINT} fontSize="9" fontFamily="DM Sans, sans-serif" textAnchor="middle" letterSpacing="1">
-          ~70% AI COST REDUCTION VIA MYSQL `REEL_CACHE` BY REEL_ID
+          EXTRACTED REEL CONTEXT CACHED BY REEL_ID
         </text>
       </svg>
       <figcaption className="project-visual-caption mono">Production pipeline at ixigo · Hackweek 2025</figcaption>
@@ -223,33 +165,33 @@ export function Reel2TripVisual() {
   )
 }
 
-/* ─── 5. macOS Intelligence MCP — natural-language → workflow ─── */
+/* ─── 4. macOS Intelligence MCP — rule-based shortcut builder ─── */
 export function MacOsMcpVisual() {
   return (
     <figure className="project-visual">
-      <svg viewBox="0 0 600 200" role="img" aria-label="macOS Intelligence MCP workflow generation" preserveAspectRatio="xMidYMid meet">
+      <svg viewBox="0 0 600 200" role="img" aria-label="macOS Intelligence MCP rule-based shortcut generation" preserveAspectRatio="xMidYMid meet">
         {/* Prompt at top */}
-        <text x={20} y={22} fill={INK_FAINT} fontSize="9" fontFamily="DM Sans, sans-serif" letterSpacing="1">PROMPT (CLAUDE DESKTOP)</text>
+        <text x={20} y={22} fill={INK_FAINT} fontSize="9" fontFamily="DM Sans, sans-serif" letterSpacing="1">SUPPORTED PHRASE</text>
         <text x={20} y={42} fill={INK} fontSize="13" fontFamily="Newsreader, serif" fontStyle="italic">
-          "screenshot, OCR the text, send it to my WhatsApp"
+          "Create a shortcut that takes a screenshot."
         </text>
 
         {/* Arrow down */}
         <Arrow x1={300} y1={56} x2={300} y2={82} />
 
         {/* Three workflow boxes */}
-        <Box x={40} y={90} w={130} h={60} label="mcp-screen" sublabel="capture + Vision OCR" />
+        <Box x={40} y={90} w={130} h={60} label="phrase matcher" sublabel="known verb + noun" />
         <Arrow x1={170} y1={120} x2={235} y2={120} />
-        <Box x={235} y={90} w={130} h={60} label="mcp-shortcuts" sublabel="Automator workflow" accent />
+        <Box x={235} y={90} w={130} h={60} label="mcp-shortcuts" sublabel="assemble action" accent />
         <Arrow x1={365} y1={120} x2={430} y2={120} />
-        <Box x={430} y={90} w={130} h={60} label="mcp-system" sublabel="WhatsApp open + paste" />
+        <Box x={430} y={90} w={130} h={60} label="workflow output" sublabel="supported macOS steps" />
 
         {/* Bottom result */}
         <text x={300} y={180} fill={INK_SOFT} fontSize="11" fontFamily="DM Sans, sans-serif" textAnchor="middle">
-          → Siri shortcut registered: "Send screenshot text"
+          Constrained patterns, not arbitrary workflow compilation
         </text>
       </svg>
-      <figcaption className="project-visual-caption mono">Five MCP servers · pattern-recognized chains</figcaption>
+      <figcaption className="project-visual-caption mono">Rule-based phrase matching → supported shortcut actions</figcaption>
     </figure>
   )
 }
@@ -261,8 +203,6 @@ export function ProjectVisualBySlug({ slug }) {
       return <AgentRelayVisual />
     case 'murmur':
       return <MurmurVisual />
-    case 'mcp-oauth-framework':
-      return <McpOAuthVisual />
     case 'reel2trip':
       return <Reel2TripVisual />
     case 'macos-intelligence-mcp':

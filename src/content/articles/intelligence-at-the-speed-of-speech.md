@@ -4,6 +4,7 @@ date: Feb 25, 2026
 readTime: 12 min read
 subtitle: A vision for conversational AI that doesn't just answer, it thinks alongside you, remembers like a friend, and shows you what it means.
 tags: Conversational AI, Voice UX, Product Vision, AI Agents, Future of Interfaces
+draft: true
 ---
 <img src="/1.png" alt="Canvas, memory, voice, and execution converging into one intelligence interface" />
 
