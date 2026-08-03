@@ -7,9 +7,9 @@ export const hero = {
   label: 'Software engineer · Voice and conversational systems',
   headline: 'I build voice systems that hold up in production.',
   description:
-    'At ixigo, I built the voice pipeline behind an agent that now handles about 60,000 calls a day. As it grew, I built the things I wished I had from day one: an agent harness, observability, and evaluations. Together, they make failed conversations easier to reproduce and fix.',
+    'At ixigo, I built the voice pipeline behind an agent that now handles tens of thousands of calls a day. As it grew, I built the things I wished I had from day one: an agent harness, observability, and evaluations. Together, they make failed conversations easier to reproduce and fix.',
   highlights: [
-    'about 60,000 calls a day',
+    'tens of thousands of calls a day',
     'voice pipeline + agent harness',
     'production traces → evaluations → fixes',
   ],
@@ -47,7 +47,7 @@ export const sections = [
       {
         slug: 'ixigo-conversational-ai',
         title: 'Conversational AI at ixigo',
-        meta: 'Production · About 60K calls/day · Built in-house',
+        meta: 'Production · Tens of thousands of calls/day · Built in-house',
         summary:
           'It started as a voice pipeline. As call volume grew, I built the missing pieces around it: an agent harness, observability, evaluations, and a path from a failed call back to a fix.',
         stack: ['Real-time voice', 'Agent harness', 'Production tracing', 'Automated evaluations', 'Targeted remediation'],
@@ -55,7 +55,7 @@ export const sections = [
         links: [],
         content: {
           howItGrew:
-            "It began with the voice pipeline for ixigo's conversational agent. The agent now handles about 60,000 calls a day on an in-house stack. At that scale, making a call work was only half the problem; we also needed to understand why a conversation failed.",
+            "It began with the voice pipeline for ixigo's conversational agent. The agent now handles tens of thousands of calls a day on an in-house stack. At that scale, making a call work was only half the problem; we also needed to understand why a conversation failed.",
           whatIBuilt:
             'I engineered the pipeline, built the agent harness, and built the observability and evaluation product around it.',
           theFeedbackLoop:
