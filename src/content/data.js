@@ -4,15 +4,9 @@ export const siteMeta = {
 }
 
 export const hero = {
-  label: 'Software engineer · Agent systems',
-  headline: 'I build the infrastructure that agents run on.',
+  label: 'Software engineer',
   description:
-    'At ixigo, that means agent harnesses, multi-agent orchestration, tools, memory, observability, and evaluations. One application of this work now handles tens of thousands of calls a day. I have applied the same engineering to travel and developer tooling—the domain changes, but the systems thinking carries over.',
-  highlights: [
-    'agent harnesses · multi-agent orchestration',
-    'tools · memory · observability · evaluations',
-    'voice · travel · developer tooling',
-  ],
+    'At ixigo, I work on agent systems and conversational AI. I built the agent harness, multi-agent orchestration, and voice pipeline behind a system handling tens of thousands of calls a day, along with the observability and evaluation loop around it. I now work on an in-app multimodal agent.',
   primaryLink: {
     label: 'View my public work',
     href: 'https://github.com/swayamg20',
@@ -26,7 +20,7 @@ export const experience = [
     companyUrl: 'https://www.ixigo.com',
     period: "Aug'24 — present",
     description:
-      "At ixigo, I build agent systems. My work spans the agent harness, multi-agent orchestration, tools, memory, observability, and evaluations. I first applied this work to our in-house conversational agent, including its voice pipeline; it now handles tens of thousands of calls a day. I now use the same building blocks for ixigo's in-app multimodal agent.",
+      "At ixigo, I work across agent systems and conversational AI. My work spans the agent harness, multi-agent orchestration, tools, memory, observability, and evaluations. I built the in-house voice pipeline behind a system handling tens of thousands of calls a day and now apply the same building blocks to ixigo's in-app multimodal agent.",
   },
   {
     role: 'Founding Engineer',

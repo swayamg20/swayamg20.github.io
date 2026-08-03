@@ -309,16 +309,10 @@ function HomePage() {
         <div className="hero-content">
           <p className="mono section-label">{hero.label.toUpperCase()}</p>
           <h1 className="hero-heading">
-            <span className="hero-heading-intro">{hero.headline}</span>
             <span className="hero-heading-name">{siteMeta.name}</span>
           </h1>
           <div className="rule" />
           <p className="description">{renderInlineCode(hero.description)}</p>
-          <ul className="hero-bracket mono" aria-label="Highlights">
-            {hero.highlights.map((highlight) => (
-              <li key={highlight}>{highlight}</li>
-            ))}
-          </ul>
           <p className="hero-inline-link mono">
             {hero.primaryLink.href.startsWith('/') ? (
               <Link to={hero.primaryLink.href}>→ {hero.primaryLink.label}</Link>
