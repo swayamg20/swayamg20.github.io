@@ -7,10 +7,10 @@ export const hero = {
   label: 'Software engineer · Voice and conversational systems',
   headline: 'I build voice systems that hold up in production.',
   description:
-    'At ixigo, I built the voice pipeline behind an agent that now handles about 60,000 calls a day. As it grew, I built the things I wished I had from day one: a test harness, observability, and evaluations. Together, they make failed conversations easier to reproduce and fix.',
+    'At ixigo, I built the voice pipeline behind an agent that now handles about 60,000 calls a day. As it grew, I built the things I wished I had from day one: an agent harness, observability, and evaluations. Together, they make failed conversations easier to reproduce and fix.',
   highlights: [
     'about 60,000 calls a day',
-    'voice pipeline + custom test harness',
+    'voice pipeline + agent harness',
     'production traces → evaluations → fixes',
   ],
   primaryLink: {
@@ -26,7 +26,7 @@ export const experience = [
     companyUrl: 'https://www.ixigo.com',
     period: "Aug'24 — present",
     description:
-      "At ixigo, I build conversational AI systems. I engineered the in-house voice pipeline, built a custom test harness, and built the observability product we use to trace and evaluate conversations. The goal was not another dashboard; it was a feedback loop that could turn failures into fixes. I now bring the same thinking to ixigo's in-app multimodal agent.",
+      "At ixigo, I build conversational AI systems. I engineered the in-house voice pipeline, built an agent harness, and built the observability product we use to trace and evaluate conversations. The goal was not another dashboard; it was a feedback loop that could turn failures into fixes. I now bring the same thinking to ixigo's in-app multimodal agent.",
   },
   {
     role: 'Founding Engineer',
@@ -49,15 +49,15 @@ export const sections = [
         title: 'Conversational AI at ixigo',
         meta: 'Production · About 60K calls/day · Built in-house',
         summary:
-          'It started as a voice pipeline. As call volume grew, I built the missing pieces around it: a test harness, observability, evaluations, and a path from a failed call back to a fix.',
-        stack: ['Real-time voice', 'Custom test harness', 'Production tracing', 'Automated evaluations', 'Targeted remediation'],
+          'It started as a voice pipeline. As call volume grew, I built the missing pieces around it: an agent harness, observability, evaluations, and a path from a failed call back to a fix.',
+        stack: ['Real-time voice', 'Agent harness', 'Production tracing', 'Automated evaluations', 'Targeted remediation'],
         status: 'In production at ixigo · Private system',
         links: [],
         content: {
           howItGrew:
             "It began with the voice pipeline for ixigo's conversational agent. The agent now handles about 60,000 calls a day on an in-house stack. At that scale, making a call work was only half the problem; we also needed to understand why a conversation failed.",
           whatIBuilt:
-            'I engineered the pipeline, built a custom test harness, and built the observability and evaluation product around it.',
+            'I engineered the pipeline, built the agent harness, and built the observability and evaluation product around it.',
           theFeedbackLoop:
             'A production conversation is traced and evaluated with its surrounding context. That gives us a path from “this call went wrong” to a reproducible case and, for selected failure modes, an automated remediation workflow.',
           whatICanShare:
