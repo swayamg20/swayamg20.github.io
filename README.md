@@ -1,23 +1,27 @@
-# React + Vite
+# Swayam Gupta
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio for [swayamg20.github.io](https://swayamg20.github.io), built with React, Vite, and React Router.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm ci
+npm run dev
+```
 
-## React Compiler
+The development server starts on the URL printed by Vite.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Verification
 
-## Expanding the ESLint configuration
+```bash
+npm run lint
+npm run build
+npm run preview -- --host 127.0.0.1 --port 3002
+REACT_RESOLUTION_BASE_URL=http://127.0.0.1:3002 npm run qa:resolution:react
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The browser QA covers the public page matrix at desktop, mobile, and narrow viewports, along with internal navigation, theme persistence, and the once-per-session intro.
 
-## Deploy to swayamg20.github.io
+## Deployment
 
-1. On GitHub: **Settings → General → Repository name** → rename to **swayamg20.github.io** (required for root site).
-2. **Settings → Pages → Build and deployment**: Source = **GitHub Actions**.
-3. Update local remote and push: `git remote set-url origin https://github.com/swayamg20/swayamg20.github.io.git` then `git push origin main`.
-4. Every push to `main` deploys. Live at https://swayamg20.github.io. Old portfolio stays at https://swayamg20.github.io/portfolio.
+Pushes to `main` run [the GitHub Pages workflow](.github/workflows/deploy.yml). It installs from the lockfile, builds the Vite application, creates direct-load fallbacks for the legacy and article URLs, and deploys `dist/` to GitHub Pages.

@@ -68,17 +68,13 @@ function parseFrontmatter(rawContent) {
   return { data, content }
 }
 
-export const articles = Object.entries(articleFiles)
+export const allArticles = Object.entries(articleFiles)
   .map(([filePath, rawContent]) => {
     if (filePath.endsWith('/README.md')) {
       return null
     }
 
     const { data, content } = parseFrontmatter(rawContent)
-    if (data.draft === true) {
-      return null
-    }
-
     const fallbackSlug = getSlugFromPath(filePath)
     const slug = data.slug ?? fallbackSlug
 
@@ -95,6 +91,7 @@ export const articles = Object.entries(articleFiles)
       authorMeta: data.authorMeta ?? '',
       tags: data.tags ?? '',
       externalUrl: data.externalUrl ?? '',
+      draft: data.draft === true,
       body: content.trim(),
       sortTimestamp: toTimestamp(data.date),
     }
@@ -102,6 +99,8 @@ export const articles = Object.entries(articleFiles)
   .filter(Boolean)
   .sort((a, b) => b.sortTimestamp - a.sortTimestamp)
 
+export const articles = allArticles.filter((article) => !article.draft)
+
 export function findArticleBySlug(slug) {
-  return articles.find((article) => article.slug === slug) ?? null
+  return allArticles.find((article) => article.slug === slug) ?? null
 }
