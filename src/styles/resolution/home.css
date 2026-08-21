@@ -1,0 +1,428 @@
+body[data-page='home'] {
+  --home-link: var(--accent);
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+html[data-theme='light'] body[data-page='home'] {
+  --home-link: var(--accent);
+}
+
+.home-shell {
+  width: min(100% - 2rem, 48rem);
+  margin-inline: auto;
+}
+
+body[data-page='home'] .home-header {
+  position: static;
+  border-bottom: 0;
+  background: transparent;
+}
+
+.home-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  min-height: 4.5rem;
+  border-bottom: 1px solid var(--ink-850);
+}
+
+.home-brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  font-size: 0.9rem;
+  font-weight: 560;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+}
+
+body[data-page='home'] .home-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.85rem, 3vw, 1.35rem);
+  overflow: visible;
+  border: 0;
+}
+
+body[data-page='home'] .home-nav a,
+body[data-page='home'] .home-nav .theme-control {
+  min-width: auto;
+  min-height: 2.75rem;
+  color: var(--ink-500);
+  font-family: var(--font-main);
+  font-size: 0.78rem;
+  font-weight: 390;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+body[data-page='home'] .home-nav a::after {
+  display: none;
+}
+
+body[data-page='home'] .home-nav a:hover,
+body[data-page='home'] .home-nav .theme-control:hover {
+  color: var(--ink-100);
+}
+
+.home-main {
+  min-height: 70vh;
+}
+
+.home-intro {
+  padding: clamp(3.5rem, 9vw, 6rem) 0 clamp(3.5rem, 7vw, 5rem);
+}
+
+.home-intro-lead {
+  margin-bottom: var(--space-12);
+}
+
+.home-identity {
+  min-width: 0;
+}
+
+.home-name-person {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  white-space: nowrap;
+}
+
+.home-identity h1 {
+  font-size: clamp(1.8rem, 5vw, 2.25rem);
+  font-weight: 560;
+  font-stretch: 108%;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+
+.home-avatar {
+  position: relative;
+  display: inline-block;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex: 0 0 2.25rem;
+  overflow: hidden;
+  border: 1px solid var(--ink-700);
+  border-radius: 50%;
+  background: var(--ink-900);
+}
+
+.home-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(0.96);
+  transform: scale(3.45);
+  transform-origin: 35% 29%;
+}
+
+.home-kicker {
+  max-width: 42rem;
+  margin-top: var(--space-3);
+  color: var(--ink-500);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.home-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.home-links a,
+.home-inline-action,
+.home-section-heading a {
+  color: var(--ink-500);
+  font-size: 0.8rem;
+  text-decoration: underline;
+  text-decoration-color: var(--ink-700);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.24em;
+  transition: color 150ms var(--ease-out), text-decoration-color 150ms var(--ease-out);
+}
+
+.home-links a:hover,
+.home-inline-action:hover,
+.home-section-heading a:hover {
+  color: var(--ink-100);
+  text-decoration-color: currentColor;
+}
+
+.home-prose {
+  display: grid;
+  gap: 1.15rem;
+  max-width: 68ch;
+  color: var(--ink-300);
+}
+
+.home-prose p {
+  text-wrap: pretty;
+}
+
+.home-prose a,
+.home-source p a {
+  color: var(--home-link);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklch, currentColor 55%, transparent);
+  text-underline-offset: 0.18em;
+  transition: color 150ms var(--ease-out), text-decoration-color 150ms var(--ease-out);
+}
+
+.home-prose a:hover,
+.home-source p a:hover {
+  color: var(--ink-100);
+  text-decoration-color: currentColor;
+}
+
+.home-section {
+  padding: clamp(2.6rem, 6vw, 4rem) 0;
+  border-top: 1px solid var(--ink-850);
+}
+
+.home-section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+.home-section-heading h2 {
+  font-size: 1.05rem;
+  font-weight: 560;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+}
+
+.home-section-heading h2 .home-heading-title {
+  color: inherit;
+  font-size: inherit;
+  text-decoration: none;
+}
+
+.home-section-heading h2 .home-heading-title:hover {
+  color: var(--home-link);
+}
+
+.home-records {
+  border-top: 1px solid var(--ink-800);
+}
+
+.home-record {
+  display: block;
+  padding: 1.15rem 0 1.2rem;
+  border-bottom: 1px solid var(--ink-850);
+}
+
+.home-record-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.home-record strong {
+  color: var(--home-link);
+  font-size: 0.98rem;
+  font-weight: 590;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  transition: color 150ms var(--ease-out);
+}
+
+.home-record small {
+  flex: 0 0 auto;
+  color: var(--ink-500);
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.home-record p {
+  max-width: 60ch;
+  margin-top: 0.32rem;
+  color: var(--ink-500);
+  font-size: 0.86rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.home-record:hover strong {
+  color: var(--ink-100);
+}
+
+.home-history .home-record strong {
+  color: var(--ink-100);
+}
+
+.home-history .home-record:hover strong {
+  color: var(--home-link);
+}
+
+.home-history .home-record .home-role {
+  color: var(--ink-500);
+  font-size: 0.78rem;
+}
+
+.home-history .home-record .home-experience-note {
+  max-width: 61ch;
+  margin-top: var(--space-2);
+  color: var(--ink-300);
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.home-source {
+  padding: 1.15rem 0 1.25rem;
+  border-top: 1px solid var(--ink-800);
+  border-bottom: 1px solid var(--ink-850);
+}
+
+.home-source p {
+  max-width: 65ch;
+  color: var(--ink-300);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.home-inline-action {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  margin-top: var(--space-2);
+}
+
+.home-chapter-link {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-6);
+  align-items: center;
+  padding: 1.15rem 0 1.25rem;
+  border-top: 1px solid var(--ink-800);
+  border-bottom: 1px solid var(--ink-850);
+}
+
+.home-chapter-link p {
+  max-width: 64ch;
+  color: var(--ink-300);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.home-chapter-link i {
+  color: var(--ink-500);
+  font-style: normal;
+  transition: color 150ms var(--ease-out), transform 180ms var(--ease-out);
+}
+
+.home-chapter-link:hover i {
+  color: var(--home-link);
+  transform: translateX(0.2rem);
+}
+
+.home-noscript {
+  color: var(--ink-300);
+}
+
+.home-noscript a {
+  color: var(--home-link);
+  text-decoration: underline;
+}
+
+body[data-page='home'] .home-footer {
+  border-top: 1px solid var(--ink-850);
+}
+
+body[data-page='home'] .home-footer-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-6);
+  padding: var(--space-8) 0 var(--space-12);
+  color: var(--ink-500);
+  font-family: var(--font-main);
+  font-size: 0.72rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+@media (max-width: 34rem) {
+  .home-header-inner {
+    min-height: 4rem;
+  }
+
+  body[data-page='home'] .home-nav {
+    gap: 0.6rem;
+  }
+
+  body[data-page='home'] .home-nav a,
+  body[data-page='home'] .home-nav .theme-control {
+    font-size: 0.72rem;
+  }
+
+  .home-identity {
+    min-width: 0;
+  }
+
+  .home-name-person {
+    gap: 0.5rem;
+  }
+
+  .home-avatar {
+    width: 2rem;
+    height: 2rem;
+    flex-basis: 2rem;
+  }
+
+  .home-intro-lead {
+    margin-bottom: var(--space-8);
+  }
+
+  .home-record-top {
+    display: grid;
+    gap: var(--space-1);
+  }
+
+  .home-chapter-link {
+    gap: var(--space-4);
+  }
+
+  .home-record small {
+    grid-row: 1;
+  }
+
+  .home-record strong {
+    grid-row: 2;
+  }
+
+  .home-history .home-record .home-role,
+  .home-history .home-record .home-experience-note {
+    grid-row: auto;
+  }
+
+  body[data-page='home'] .home-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-links a,
+  .home-inline-action,
+  .home-section-heading a,
+  .home-prose a,
+  .home-source p a,
+  .home-record strong,
+  .home-chapter-link i {
+    transition: none;
+  }
+
+}

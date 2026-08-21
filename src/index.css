@@ -1,15 +1,12 @@
-body {
-  margin: 0;
-  font-family: 'Signifier';
-  min-width: 320px;
-  background: #ffffff;
-  color: #1a1612;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import './styles/resolution/site.css';
+@import './styles/resolution/home.css';
+@import './styles/resolution/pages.css';
+@import './styles/resolution/article.css';
+
+#root {
+  min-height: 100vh;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+.react-diagram-contents {
+  display: contents;
 }
