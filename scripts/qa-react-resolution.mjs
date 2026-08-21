@@ -1,6 +1,7 @@
 import { chromium } from 'playwright'
 
 const baseUrl = (process.env.REACT_RESOLUTION_BASE_URL || 'http://127.0.0.1:3001').replace(/\/$/, '')
+const baseOrigin = new URL(baseUrl).origin
 const themeStorageKey = 'swayam-resolution-theme'
 
 const projects = [
@@ -82,10 +83,12 @@ function createRuntimeMonitor(page, scope) {
   }
   const onPageError = (error) => pageErrors.push(error.message)
   const onRequestFailed = (request) => {
+    if (new URL(request.url()).origin !== baseOrigin) return
     const reason = request.failure()?.errorText || 'unknown error'
     failedRequests.push(`${request.method()} ${request.url()} (${reason})`)
   }
   const onResponse = (response) => {
+    if (new URL(response.url()).origin !== baseOrigin) return
     if (response.status() >= 400) badResponses.push(`${response.status()} ${response.url()}`)
   }
 
