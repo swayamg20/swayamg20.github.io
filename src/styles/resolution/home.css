@@ -83,14 +83,12 @@ body[data-page='home'] .home-nav .theme-control:hover {
   min-width: 0;
 }
 
-.home-name-person {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.625rem;
-  white-space: nowrap;
-}
-
 .home-identity h1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100%, 42rem);
+  gap: var(--space-8);
   font-size: clamp(1.8rem, 5vw, 2.25rem);
   font-weight: 560;
   font-stretch: 108%;
@@ -101,9 +99,9 @@ body[data-page='home'] .home-nav .theme-control:hover {
 .home-avatar {
   position: relative;
   display: inline-block;
-  width: 2.25rem;
-  height: 2.25rem;
-  flex: 0 0 2.25rem;
+  width: 6rem;
+  height: 6rem;
+  flex: 0 0 6rem;
   overflow: hidden;
   border: 1px solid var(--ink-700);
   border-radius: 50%;
@@ -115,7 +113,7 @@ body[data-page='home'] .home-nav .theme-control:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(1) contrast(0.96);
+  filter: none;
   transform: scale(3.45);
   transform-origin: 35% 29%;
 }
@@ -371,14 +369,14 @@ body[data-page='home'] .home-footer-inner {
     min-width: 0;
   }
 
-  .home-name-person {
-    gap: 0.5rem;
+  .home-identity h1 {
+    gap: var(--space-4);
   }
 
   .home-avatar {
-    width: 2rem;
-    height: 2rem;
-    flex-basis: 2rem;
+    width: 4rem;
+    height: 4rem;
+    flex-basis: 4rem;
   }
 
   .home-intro-lead {

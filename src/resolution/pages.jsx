@@ -44,18 +44,15 @@ export function HomePage() {
           <div className="home-intro-lead">
             <div className="home-identity">
               <h1 id="home-title">
-                Hi, I’m{' '}
-                <span className="home-name-person">
-                  Swayam Gupta.
-                  <span className="home-avatar" aria-hidden="true">
-                    <img
-                      src={portraitUrl}
-                      alt=""
-                      width="72"
-                      height="72"
-                      fetchPriority="high"
-                    />
-                  </span>
+                <span className="home-heading-copy">Hi, I’m Swayam Gupta.</span>
+                <span className="home-avatar" aria-hidden="true">
+                  <img
+                    src={portraitUrl}
+                    alt=""
+                    width="72"
+                    height="72"
+                    fetchPriority="high"
+                  />
                 </span>
               </h1>
               <p className="home-kicker">
