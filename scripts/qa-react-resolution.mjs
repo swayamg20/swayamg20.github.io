@@ -5,13 +5,20 @@ const baseOrigin = new URL(baseUrl).origin
 const themeStorageKey = 'swayam-resolution-theme'
 
 const projects = [
-  ['reel2trip', 'Reel2Trip'],
   ['agentrelay', 'AgentRelay'],
   ['conversational-ai-visual-layer', 'Visual layer for conversational AI'],
-  ['macos-intelligence-mcp', 'macOS Intelligence MCP'],
   ['cmux-agent-orchestrator', 'cmux Agent Orchestrator'],
+  ['macos-intelligence-mcp', 'macOS Intelligence MCP'],
+  ['reel2trip', 'Reel2Trip'],
   ['isro-xray-burst', 'ISRO X-ray burst automation'],
   ['journal-scraper', 'Journal scraper for data mining'],
+]
+
+const featuredProjects = [
+  'AgentRelay',
+  'Visual layer for conversational AI',
+  'cmux Agent Orchestrator',
+  'macOS Intelligence MCP',
 ]
 
 const articles = [
@@ -168,6 +175,34 @@ function verifyContentCounts(scope, kind, counts) {
     fail(scope, `expected 7 projects, got ${counts.projects}`)
   }
 
+  if (kind === 'work') {
+    const expectedOrder = projects.map(([, title]) => title)
+    if (JSON.stringify(counts.projectOrder) !== JSON.stringify(expectedOrder)) {
+      fail(
+        scope,
+        `expected project order ${JSON.stringify(expectedOrder)}, got ${JSON.stringify(counts.projectOrder)}`,
+      )
+    }
+  }
+
+  if (kind === 'home') {
+    if (JSON.stringify(counts.featuredOrder) !== JSON.stringify(featuredProjects)) {
+      fail(
+        scope,
+        `expected featured order ${JSON.stringify(featuredProjects)}, got ${JSON.stringify(counts.featuredOrder)}`,
+      )
+    }
+    if (
+      counts.featuredDescriptions.length !== featuredProjects.length
+      || counts.featuredDescriptions.some((description) => !normalizeText(description))
+    ) {
+      fail(scope, 'every featured project must have a one-line description')
+    }
+    if (normalizeText(counts.overlayRole) !== 'First engineer') {
+      fail(scope, `expected Overlayy role "First engineer", got "${counts.overlayRole}"`)
+    }
+  }
+
   if (
     kind === 'writing'
     && (counts.published !== 3 || counts.drafts !== 1 || counts.reading !== 5)
@@ -300,6 +335,15 @@ async function verifyDirectRoute(context, viewportName, route) {
         }),
         counts: {
           projects: document.querySelectorAll('[data-work-list] .work-entry').length,
+          projectOrder: [...document.querySelectorAll('[data-work-list] .work-entry h3')]
+            .map((heading) => heading.textContent || ''),
+          featuredOrder: [...document.querySelectorAll('[data-home-work] .home-record strong')]
+            .map((heading) => heading.textContent || ''),
+          featuredDescriptions: [...document.querySelectorAll('[data-home-work] .home-record > p')]
+            .map((paragraph) => paragraph.textContent || ''),
+          overlayRole:
+            document.querySelector('.home-history .home-record:nth-child(2) .home-role')
+              ?.textContent || '',
           published: document.querySelectorAll('[data-writing-ledger] .article-row').length,
           drafts: document.querySelectorAll('[data-draft-ledger] .article-row').length,
           reading: document.querySelectorAll('[data-reading-ledger] .reading-row').length,

@@ -148,10 +148,10 @@ export function HomePage() {
                 <strong>Overlayy AI</strong>
                 <small>2024</small>
               </div>
-              <p className="home-role">Founding Engineer</p>
+              <p className="home-role">First engineer</p>
               <p className="home-experience-note">
-                Built the first product stack end to end, from Phoenix and FastAPI services to
-                AWS, the embeddable client, and analytics.
+                Built the company’s first product stack end to end, from Phoenix and FastAPI
+                services to AWS, the embeddable client, and analytics.
               </p>
             </Link>
           </div>

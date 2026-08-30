@@ -1,7 +1,7 @@
 export const RESOLUTION_PROJECTS = [
   {
     slug: 'reel2trip',
-    order: '01',
+    order: '05',
     title: 'Reel2Trip',
     category: 'shipped',
     categoryLabel: 'Shipped',
@@ -11,7 +11,7 @@ export const RESOLUTION_PROJECTS = [
     signal: 'lime',
     role: 'Lead / backend',
     question: 'Can a travel reel become a plan you can keep refining?',
-    cardLine: 'Reel → itinerary → conversation',
+    cardLine: 'Travel reel in, editable itinerary and conversation out.',
     summary:
       'A production flow that turns a shared travel video into a structured itinerary, then carries that context into conversation.',
     flow: [
@@ -51,7 +51,7 @@ export const RESOLUTION_PROJECTS = [
   },
   {
     slug: 'agentrelay',
-    order: '02',
+    order: '01',
     title: 'AgentRelay',
     category: 'open-source',
     categoryLabel: 'Open source',
@@ -60,7 +60,7 @@ export const RESOLUTION_PROJECTS = [
     signal: 'cyan',
     role: 'Creator',
     question: 'How should coding agents ask each other for help across repository boundaries?',
-    cardLine: 'Agent handoffs across repository boundaries',
+    cardLine: 'Authenticated agent handoffs across repositories and machines.',
     summary:
       'An authenticated mailbox and MCP toolkit for agents owned by different people, working in different repositories.',
     flow: [
@@ -100,7 +100,7 @@ export const RESOLUTION_PROJECTS = [
   },
   {
     slug: 'conversational-ai-visual-layer',
-    order: '03',
+    order: '02',
     title: 'Visual layer for conversational AI',
     category: 'prototype',
     categoryLabel: 'Prototype',
@@ -109,7 +109,7 @@ export const RESOLUTION_PROJECTS = [
     signal: 'violet',
     role: 'Creator',
     question: 'Can an explanation draw while it speaks?',
-    cardLine: 'Voice explanations that draw themselves',
+    cardLine: 'Voice in, synchronized diagrams and canvas actions out.',
     summary:
       'A voice-first tutor that talks through an idea while the browser builds a synchronized visual explanation.',
     flow: [
@@ -158,7 +158,7 @@ export const RESOLUTION_PROJECTS = [
     signal: 'coral',
     role: 'Creator',
     question: 'What if a desktop agent had small, inspectable capabilities instead of one giant permission?',
-    cardLine: 'Small, inspectable desktop capabilities',
+    cardLine: 'Five narrow MCP servers for inspectable macOS capabilities.',
     summary:
       'Five focused MCP servers for screen understanding, system controls, usage state, and supported Apple Shortcuts.',
     flow: [
@@ -198,17 +198,17 @@ export const RESOLUTION_PROJECTS = [
   },
   {
     slug: 'cmux-agent-orchestrator',
-    order: '05',
+    order: '03',
     title: 'cmux Agent Orchestrator',
     category: 'open-source',
     categoryLabel: 'Open source',
     year: '2026',
-    state: 'Public v0.1 release',
+    state: 'Community plugin · v0.1.1',
     signal: 'cyan',
     role: 'Creator / maintainer',
     question:
       'How can one developer supervise many coding-agent sessions without taking ownership away from their terminals and runtimes?',
-    cardLine: 'Durable tasks over live coding-agent sessions',
+    cardLine: 'An Obsidian cockpit for Claude Code and Codex sessions running in cmux.',
     summary:
       'A desktop Obsidian cockpit that connects durable Markdown tasks to Claude Code and Codex runs already owned by cmux.',
     flow: [
@@ -238,9 +238,9 @@ export const RESOLUTION_PROJECTS = [
       },
       {
         label: 'Boundary',
-        title: 'Released on GitHub, not in Community Plugins yet.',
+        title: 'Available in Obsidian Community Plugins.',
         copy:
-          'Version 0.1.0 is a public, manually installable GitHub release for desktop Obsidian. The Obsidian Community directory submission has not been opened yet.',
+          'Version 0.1.1 is available directly through Obsidian Community Plugins. It remains desktop-only because it coordinates sessions already running in cmux on macOS.',
       },
     ],
     stack: ['TypeScript', 'Obsidian API', 'cmux', 'Markdown', 'Vitest', 'esbuild'],
@@ -258,7 +258,7 @@ export const RESOLUTION_PROJECTS = [
     signal: 'lime',
     role: 'Frontend and product documentation',
     question: 'Can solar X-ray burst review become a clear, repeatable web workflow?',
-    cardLine: 'Solar-burst data into reviewable curves',
+    cardLine: 'A review workflow for identifying solar X-ray bursts.',
     summary:
       'A web system for identifying and reviewing solar X-ray bursts, built for an ISRO problem statement at Inter IIT Tech Meet 10.0.',
     flow: [
@@ -309,7 +309,7 @@ export const RESOLUTION_PROJECTS = [
     signal: 'cyan',
     role: 'Full-stack engineer',
     question: 'Can bibliography files become a clean author and citation dataset?',
-    cardLine: 'Bibliography files into citation data',
+    cardLine: 'Research exports into structured author, DOI, and citation data.',
     summary:
       'A supervised data-mining project that parsed research exports, extracted author and DOI metadata, and enriched records with citation counts.',
     flow: [
@@ -348,21 +348,21 @@ export const RESOLUTION_PROJECTS = [
     github: '',
     repositoryLabel: 'Academic archive',
   },
-]
+].sort((left, right) => left.order.localeCompare(right.order))
 
 export const RESOLUTION_FEATURED_PROJECTS = [
-  'reel2trip',
-  'cmux-agent-orchestrator',
   'agentrelay',
   'conversational-ai-visual-layer',
+  'cmux-agent-orchestrator',
+  'macos-intelligence-mcp',
 ]
 
 export const RESOLUTION_RECENTLY_SHIPPED = [
   {
     date: 'Aug 2026',
-    title: 'cmux Agent Orchestrator 0.1.0',
-    note: 'Public Obsidian plugin release',
-    href: 'https://github.com/swayamg20/cmux-agent-orchestrator/releases/tag/0.1.0',
+    title: 'cmux Agent Orchestrator 0.1.1',
+    note: 'Released in Obsidian Community Plugins',
+    href: 'https://community.obsidian.md/plugins/cmux-agent-orchestrator',
   },
   {
     date: 'Aug 2026',
