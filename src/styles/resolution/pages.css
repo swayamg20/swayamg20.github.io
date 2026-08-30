@@ -1036,6 +1036,11 @@ body[data-page='about'] .practice-section li > p {
     padding-top: var(--space-12);
   }
 
+  .project-page .project-heading h1 {
+    overflow-wrap: anywhere;
+    font-size: clamp(2.5rem, 13.5vw, 3rem);
+  }
+
   .experience-list article > header,
   .page-contact,
   .page-footer .page-footer-inner {

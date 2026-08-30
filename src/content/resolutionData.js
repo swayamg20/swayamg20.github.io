@@ -56,7 +56,7 @@ export const RESOLUTION_PROJECTS = [
     category: 'open-source',
     categoryLabel: 'Open source',
     year: '2026',
-    state: 'Early prototype',
+    state: 'Mailbox 0.2.1 released',
     signal: 'cyan',
     role: 'Creator',
     question: 'How should coding agents ask each other for help across repository boundaries?',
@@ -90,18 +90,18 @@ export const RESOLUTION_PROJECTS = [
       },
       {
         label: 'Boundary',
-        title: 'Mailbox today, runtime later.',
+        title: 'Mailbox shipped, autonomy still gated.',
         copy:
-          'It is an asynchronous mailbox, not an autonomous agent runtime. Durable replay, persistent machine processes, and enforced local policy remain future work.',
+          'The authenticated mailbox and durable Mission control plane are shipped. Real autonomous coding-agent Missions remain experimental and are not an available end-user path yet.',
       },
     ],
     stack: ['TypeScript', 'Hono', 'Postgres', 'Drizzle ORM', 'MCP SDK'],
     github: 'https://github.com/swayamg20/AgentRelay',
   },
   {
-    slug: 'murmur',
+    slug: 'conversational-ai-visual-layer',
     order: '03',
-    title: 'Murmur',
+    title: 'Visual layer for conversational AI',
     category: 'prototype',
     categoryLabel: 'Prototype',
     year: '2026',
@@ -197,204 +197,58 @@ export const RESOLUTION_PROJECTS = [
     github: 'https://github.com/swayamg20/mac-os-automation-mcp',
   },
   {
-    slug: 'synthio',
+    slug: 'cmux-agent-orchestrator',
     order: '05',
-    title: 'Synthio',
-    category: 'prototype',
-    categoryLabel: 'Prototype',
+    title: 'cmux Agent Orchestrator',
+    category: 'open-source',
+    categoryLabel: 'Open source',
     year: '2026',
-    state: 'Working demo',
-    signal: 'violet',
-    role: 'Designer / engineer',
-    question: 'Can a presentation feel like a dialogue instead of a broadcast?',
-    cardLine: 'A presentation that can hear',
-    summary:
-      'An AI voice presenter that narrates slides, accepts interruptions, answers questions, and navigates the deck through conversation.',
-    flow: [
-      ['hear', 'live question'],
-      ['structure', 'response schema'],
-      ['stream', 'speech + tool calls'],
-      ['change', 'slide state'],
-    ],
-    story: [
-      {
-        label: 'Problem',
-        title: 'A deck cannot hear the room.',
-        copy:
-          'Traditional presentations move in one direction. Questions break the flow, and static diagrams cannot respond when someone wants a deeper explanation.',
-      },
-      {
-        label: 'Build',
-        title: 'A presenter with interruptible voice.',
-        copy:
-          'Synthio combines streaming transcription, structured tool calls, per-sentence TTS, slide navigation, diagram highlighting, and contextual follow-ups.',
-      },
-      {
-        label: 'Decision',
-        title: 'Stream useful structure early.',
-        copy:
-          'Every answer follows a strict response schema. Sentences are extracted while the response streams so speech can begin before the full payload is complete.',
-      },
-      {
-        label: 'Boundary',
-        title: 'A prepared-deck exploration.',
-        copy:
-          'It uses a prepared deck. Importing arbitrary presentations, long-term memory, and production reliability are future work.',
-      },
-    ],
-    stack: ['Next.js', 'TypeScript', 'Deepgram', 'OpenAI', 'ElevenLabs', 'Web Audio API'],
-    github: 'https://github.com/swayamg20/synthio-voice-presenter',
-  },
-  {
-    slug: 'fieldpulse',
-    order: '06',
-    title: 'FieldPulse',
-    category: 'prototype',
-    categoryLabel: 'Prototype',
-    year: '2026',
-    state: 'Prototype',
-    signal: 'coral',
-    role: 'Full-stack engineer',
-    question: 'Can routine field check-ins become structured operational signal?',
-    cardLine: 'Field calls into operational signal',
-    summary:
-      'A field-sales prototype that prioritizes rep calls, assembles context, and turns post-call data into store-level alerts.',
-    flow: [
-      ['score', 'rep + store risk'],
-      ['prepare', 'context queue'],
-      ['call', 'voice agent'],
-      ['act', 'structured alert'],
-    ],
-    story: [
-      {
-        label: 'Problem',
-        title: 'Important context lives inside repetitive calls.',
-        copy:
-          'Managers spend hours checking in with field reps, while store risk, competitor activity, and pending follow-ups remain difficult to compare systematically.',
-      },
-      {
-        label: 'Build',
-        title: 'Prioritize, call, then act.',
-        copy:
-          'The prototype scores a call queue, builds a context-aware prompt, triggers a Bolna voice agent, and processes webhooks into store updates and alerts.',
-      },
-      {
-        label: 'Decision',
-        title: 'Context is assembled before the call.',
-        copy:
-          'Each conversation receives the stores, risks, and unresolved work that matter for that rep instead of one generic script for everyone.',
-      },
-      {
-        label: 'Boundary',
-        title: 'Prototype scope.',
-        copy:
-          'The repository demonstrates the workflow with SQLite and seeded data. It is not presented as a deployed field-sales product.',
-      },
-    ],
-    stack: ['Next.js', 'TypeScript', 'SQLite', 'Bolna', 'Deepgram', 'ElevenLabs', 'Plivo'],
-    github: 'https://github.com/swayamg20/bolna-field-rep-agent',
-  },
-  {
-    slug: 'feather-analysis',
-    order: '07',
-    title: 'Feather call analysis',
-    category: 'prototype',
-    categoryLabel: 'Systems exercise',
-    year: '2026',
-    state: 'Small service',
+    state: 'Public v0.1 release',
     signal: 'cyan',
-    role: 'Backend engineer',
-    question: 'What is the smallest useful post-call analysis pipeline?',
-    cardLine: 'Voice events into test evidence',
+    role: 'Creator / maintainer',
+    question:
+      'How can one developer supervise many coding-agent sessions without taking ownership away from their terminals and runtimes?',
+    cardLine: 'Durable tasks over live coding-agent sessions',
     summary:
-      'A Node service that ingests voice-agent events over WebSocket, computes analysis when a call ends, and persists the result.',
+      'A desktop Obsidian cockpit that connects durable Markdown tasks to Claude Code and Codex runs already owned by cmux.',
     flow: [
-      ['ingest', 'WebSocket events'],
-      ['trigger', 'end_call'],
-      ['compute', 'metrics + analysis'],
-      ['persist', 'versioned run'],
+      ['observe', 'cmux topology'],
+      ['classify', 'bounded evidence'],
+      ['link', 'durable Markdown task'],
+      ['focus', 'exact cmux surface'],
     ],
     story: [
       {
         label: 'Problem',
-        title: 'A transcript alone is not a diagnosis.',
+        title: 'Agent work disappears into terminal windows.',
         copy:
-          'Voice-agent testing needs a compact view of turns, latency, required tools, executed tools, and missed actions after the call finishes.',
+          'Claude Code and Codex sessions can span repositories and terminals, while the goal, decisions, review state, and human follow-up live somewhere else.',
       },
       {
         label: 'Build',
-        title: 'One event path, one persisted result.',
+        title: 'An Obsidian cockpit over cmux.',
         copy:
-          'The service buffers per-call events, builds metrics and a structured analysis on end_call, then stores the result and test summary in SQLite.',
+          'The plugin observes cmux surfaces, conservatively classifies Claude Code and Codex sessions, links them to durable Markdown tasks, shows bounded previews, and focuses the exact surface on request.',
       },
       {
         label: 'Decision',
-        title: 'Keep versioning at the run level.',
+        title: 'Observation is not process ownership.',
         copy:
-          'A test run carries its version so the same scenario can be evaluated across iterations without complicating each individual event.',
+          'cmux owns terminals and process lifetime. Obsidian owns durable work context. The plugin never sends terminal input or marks a task complete from weak runtime evidence.',
       },
       {
         label: 'Boundary',
-        title: 'Deliberately narrow.',
+        title: 'Released on GitHub, not in Community Plugins yet.',
         copy:
-          'This is a focused systems exercise using in-memory active-call state and SQLite, not a distributed observability platform.',
+          'Version 0.1.0 is a public, manually installable GitHub release for desktop Obsidian. The Obsidian Community directory submission has not been opened yet.',
       },
     ],
-    stack: ['Node.js', 'Express', 'WebSocket', 'Sequelize', 'SQLite'],
-    github: 'https://github.com/swayamg20/feather-post-call-analytics',
-  },
-  {
-    slug: 'webrtc-voice-ai',
-    order: '08',
-    title: 'WebRTC voice AI',
-    category: 'prototype',
-    categoryLabel: 'Early prototype',
-    year: '2025',
-    state: 'Technical sketch',
-    signal: 'lime',
-    role: 'Engineer',
-    question: 'What does the smallest live transcription loop look like?',
-    cardLine: 'The smallest live transcription loop',
-    summary:
-      'An early WebRTC experiment that sends microphone audio through a Node service for live Deepgram transcription.',
-    flow: [
-      ['capture', 'microphone audio'],
-      ['transport', 'WebRTC stream'],
-      ['transcribe', 'Deepgram live'],
-      ['surface', 'partial text'],
-    ],
-    story: [
-      {
-        label: 'Problem',
-        title: 'Realtime starts with transport.',
-        copy:
-          'Before orchestration and polished voice UX, a system has to move microphone audio reliably and surface partial text quickly enough to feel live.',
-      },
-      {
-        label: 'Build',
-        title: 'A deliberately small loop.',
-        copy:
-          'The repository connects browser audio, a Node and Express service, and Deepgram live transcription as a focused transport experiment.',
-      },
-      {
-        label: 'Decision',
-        title: 'Learn the primitive first.',
-        copy:
-          'The project isolates streaming and transcription rather than hiding them inside a larger assistant architecture.',
-      },
-      {
-        label: 'Boundary',
-        title: 'An early technical sketch.',
-        copy:
-          'It is not a full conversational agent. Turn-taking, synthesis, memory, reliability, and product behavior sit outside this repository.',
-      },
-    ],
-    stack: ['JavaScript', 'Node.js', 'Express', 'WebRTC', 'Deepgram'],
-    github: 'https://github.com/swayamg20/webrtc-voice-ai',
+    stack: ['TypeScript', 'Obsidian API', 'cmux', 'Markdown', 'Vitest', 'esbuild'],
+    github: 'https://github.com/swayamg20/cmux-agent-orchestrator',
   },
   {
     slug: 'isro-xray-burst',
-    order: '09',
+    order: '06',
     title: 'ISRO X-ray burst automation',
     category: 'research',
     categoryLabel: 'Inter IIT Tech Meet',
@@ -445,7 +299,7 @@ export const RESOLUTION_PROJECTS = [
   },
   {
     slug: 'journal-scraper',
-    order: '10',
+    order: '07',
     title: 'Journal scraper for data mining',
     category: 'research',
     categoryLabel: 'Supervised project',
@@ -498,9 +352,30 @@ export const RESOLUTION_PROJECTS = [
 
 export const RESOLUTION_FEATURED_PROJECTS = [
   'reel2trip',
+  'cmux-agent-orchestrator',
   'agentrelay',
-  'murmur',
-  'macos-intelligence-mcp',
+  'conversational-ai-visual-layer',
+]
+
+export const RESOLUTION_RECENTLY_SHIPPED = [
+  {
+    date: 'Aug 2026',
+    title: 'cmux Agent Orchestrator 0.1.0',
+    note: 'Public Obsidian plugin release',
+    href: 'https://github.com/swayamg20/cmux-agent-orchestrator/releases/tag/0.1.0',
+  },
+  {
+    date: 'Aug 2026',
+    title: 'AgentRelay MCP mailbox 0.2.1',
+    note: 'Published agent-handoff release',
+    href: 'https://github.com/swayamg20/AgentRelay/releases/tag/agentrelay-mcp-v0.2.1',
+  },
+  {
+    date: 'May 2026',
+    title: 'TARA at ixigo',
+    note: 'Multimodal AI travel assistant launch',
+    href: 'https://www.linkedin.com/posts/swayamgupta20_ixigonext-tara-traveltech-activity-7460399846320005120-nOs9',
+  },
 ]
 
 export const RESOLUTION_WRITING = [

@@ -7,6 +7,7 @@ import {
   findProject,
   projects,
   reading,
+  recentlyShipped,
   writing,
 } from './content.js'
 import {
@@ -56,7 +57,7 @@ export function HomePage() {
                 </span>
               </h1>
               <p className="home-kicker">
-                Software engineer · agent systems · multimodal products · New Delhi
+                I build and ship production agent systems.
               </p>
               <div className="home-links" aria-label="Contact and social links">
                 <a href="mailto:gupta.swayam123@gmail.com">Email</a>
@@ -70,22 +71,39 @@ export function HomePage() {
 
           <div className="home-prose">
             <p>
-              I’m a software engineer at{' '}
-              <ExternalLink href="https://www.ixigo.com">ixigo</ExternalLink>, building agent
-              systems for travel: voice runtimes, evaluations, observability, and multimodal
-              product experiences.
+              At <ExternalLink href="https://www.ixigo.com">ixigo</ExternalLink>, I lead the
+              engineering work for conversational AI, including{' '}
+              <ExternalLink href="https://www.linkedin.com/posts/swayamgupta20_ixigonext-tara-traveltech-activity-7460399846320005120-nOs9">
+                TARA
+              </ExternalLink>
+              , ixigo’s multimodal AI travel assistant.
             </p>
             <p>
-              I’m most interested in the layer after a demo works: persistence, coordination,
-              failure recovery, and the infrastructure that makes an agent dependable.
-            </p>
-            <p>
-              Outside work, I build public experiments such as{' '}
+              Across my production work, I built agent harnesses, multi-agent orchestration,
+              evaluations, observability, and voice infrastructure for systems handling tens of
+              thousands of calls a day. Outside work, I release open-source tools such as{' '}
               <Link to={projectHref('agentrelay')}>AgentRelay</Link> and{' '}
-              <Link to={projectHref('murmur')}>Murmur</Link>, then write about what broke, what
-              held up, and what I still do not understand.
+              <Link to={projectHref('cmux-agent-orchestrator')}>cmux Agent Orchestrator</Link>.
             </p>
           </div>
+        </section>
+
+        <section className="home-section home-shipped" aria-labelledby="shipped-title">
+          <header className="home-section-heading">
+            <h2 id="shipped-title">Recently shipped</h2>
+          </header>
+          <ol className="home-shipping-ledger">
+            {recentlyShipped.map((entry) => (
+              <li key={entry.title}>
+                <time>{entry.date}</time>
+                <ExternalLink href={entry.href}>
+                  <strong>{entry.title}</strong>
+                  <span>{entry.note}</span>
+                  <i aria-hidden="true">↗</i>
+                </ExternalLink>
+              </li>
+            ))}
+          </ol>
         </section>
 
         <section className="home-section" id="work" aria-labelledby="selected-title">
@@ -245,7 +263,7 @@ export function WorkPage() {
         <section className="page-section work-directory" aria-labelledby="work-index-title">
           <header className="page-section-heading">
             <h2 id="work-index-title">Projects</h2>
-            <span>10 records</span>
+            <span>{String(projects.length).padStart(2, '0')} records</span>
           </header>
           <div className="work-list" data-work-list>
             {projects.map((project) => (
@@ -407,18 +425,17 @@ export function AboutPage() {
           </h1>
           <div className="about-copy">
             <p>
-              I’m Swayam, a software engineer in New Delhi. At ixigo, I work across agent systems
-              and conversational AI: orchestration, tools, memory, observability, evaluations, and
-              multimodal product experiences.
+              I’m Swayam, a software engineer who builds production agent systems. At ixigo, I
+              lead the engineering work for TARA, its multimodal conversational AI platform.
             </p>
             <p>
-              I built the agent harness, multi-agent orchestration, and in-house voice pipeline
-              behind a system handling tens of thousands of calls a day. I now apply those building
-              blocks to ixigo’s in-app multimodal agent.
+              Across my production work, I build agent harnesses, real-time voice, client-native
+              actions, evaluations, and observability for systems handling tens of thousands of
+              calls a day.
             </p>
             <p>
-              I care most about the layer after a demo works—where coordination, failure recovery,
-              and clear boundaries make software dependable.
+              I care most about what happens after a demo works: the coordination, recovery, and
+              explicit boundaries that make software dependable.
             </p>
           </div>
         </section>
@@ -440,10 +457,11 @@ export function AboutPage() {
                 <time>Aug 2024 → now</time>
               </header>
               <p>
-                My work spans the agent harness, multi-agent orchestration, tools, memory,
-                observability, and evaluations. I built the in-house voice pipeline behind a
-                system handling tens of thousands of calls a day and now apply the same building
-                blocks to ixigo’s in-app multimodal agent.
+                I lead the engineering work for TARA across its contextual agent harness,
+                provider-neutral orchestration, LiveKit/WebRTC voice runtime, client-native
+                actions, evaluations, and observability across mobile and web. My broader work
+                includes conversational AI infrastructure operating at tens of thousands of calls
+                a day.
               </p>
             </article>
             <article data-reveal>
@@ -545,7 +563,7 @@ export function CollegePage() {
           <p className="page-eyebrow">College &amp; early work</p>
           <h1 id="college-page-title">Before the current chapter.</h1>
           <p>
-            Material Science &amp; Engineering, IIT Kanpur. Graduated in 2024. These are the
+            Materials Science &amp; Engineering, IIT Kanpur. Graduated in 2024. These are the
             projects, internships, teams, and recognitions that shaped how I learned to build.
           </p>
         </section>
@@ -553,7 +571,7 @@ export function CollegePage() {
         <section className="page-section college-section" aria-labelledby="recognition-title">
           <header className="page-section-heading">
             <h2 id="recognition-title">Recognition</h2>
-            <span>2022 → 2025</span>
+            <span>2021 → 2025</span>
           </header>
           <div className="college-ledger" data-college-recognition>
             <article data-reveal>
@@ -582,6 +600,13 @@ export function CollegePage() {
                 </p>
               </div>
               <time>2022</time>
+            </article>
+            <article data-reveal>
+              <div>
+                <h3>Google Hash Code, global rank 5,401</h3>
+                <p>Team placement in Google’s 2021 programming competition.</p>
+              </div>
+              <time>2021</time>
             </article>
           </div>
         </section>
