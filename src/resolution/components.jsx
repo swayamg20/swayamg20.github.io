@@ -155,7 +155,7 @@ export function SiteFooter() {
     return (
       <footer className="site-footer home-footer">
         <div className="home-shell home-footer-inner">
-          <span>Swayam Gupta · New Delhi</span>
+          <span>Swayam Gupta</span>
         </div>
       </footer>
     )
@@ -164,7 +164,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer page-footer">
       <div className="page-shell page-footer-inner">
-        <span>Swayam Gupta · New Delhi</span>
+        <span>Swayam Gupta</span>
         <div>
           {socialLinks.map(([label, href]) => (
             <a

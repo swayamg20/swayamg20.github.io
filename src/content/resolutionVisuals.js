@@ -39,7 +39,7 @@ const resolutionDiagrams = {
       <path class="diagram-signal diagram-fill" d="m244 129 16 7-16 7zM439 129l16 7-16 7zM396 165l-16 7 16 7zM201 165l-16 7 16 7z" />
     </g>
   `),
-  murmur: wrapResolutionDiagram(`
+  'conversational-ai-visual-layer': wrapResolutionDiagram(`
     <g class="diagram-shape">
       <path d="M49 151h18l13-42 20 84 18-63 17 39 17-26 18 8h31" />
       <path class="diagram-signal" d="M222 150h92" />
@@ -64,54 +64,21 @@ const resolutionDiagrams = {
       <circle class="diagram-signal diagram-fill" cx="320" cy="73" r="6" />
     </g>
   `),
-  synthio: wrapResolutionDiagram(`
+  'cmux-agent-orchestrator': wrapResolutionDiagram(`
     <g class="diagram-shape">
-      <rect class="diagram-emphasis" x="70" y="63" width="330" height="178" rx="8" />
-      <path d="M98 95h113M98 121h186M98 176h75M190 176h74M281 176h88" />
-      <rect x="98" y="143" width="271" height="65" rx="4" />
-      <path class="diagram-signal" d="M438 103c17-31 40-31 57 0s40 31 57 0M438 151c17-31 40-31 57 0s40 31 57 0M438 199c17-31 40-31 57 0s40 31 57 0" />
-      <circle class="diagram-signal diagram-fill" cx="412" cy="103" r="5" />
-      <circle class="diagram-signal diagram-fill" cx="412" cy="151" r="5" />
-      <circle class="diagram-signal diagram-fill" cx="412" cy="199" r="5" />
-    </g>
-  `),
-  fieldpulse: wrapResolutionDiagram(`
-    <g class="diagram-shape">
-      <rect x="48" y="88" width="140" height="124" rx="8" />
-      <path d="M75 118h86M75 145h58M75 172h72" />
-      <circle class="diagram-emphasis" cx="320" cy="150" r="66" />
-      <path d="M297 119c5-7 13-8 18-3l13 13c5 5 4 13-3 18l-8 6c9 17 19 27 36 36l6-8c5-7 13-8 18-3l13 13" />
-      <rect x="452" y="74" width="140" height="152" rx="8" />
-      <path d="M479 111h86M479 139h62M479 167h76" />
-      <path class="diagram-signal" d="M188 150h66M386 150h66" />
-      <path class="diagram-signal diagram-fill" d="m245 143 16 7-16 7zM443 143l16 7-16 7z" />
-      <circle class="diagram-signal diagram-fill" cx="558" cy="199" r="6" />
-    </g>
-  `),
-  'feather-analysis': wrapResolutionDiagram(`
-    <g class="diagram-shape">
-      <path d="M48 94h164M48 126h126M48 158h154M48 190h108" />
-      <circle class="diagram-signal diagram-fill" cx="48" cy="94" r="5" />
-      <circle class="diagram-signal diagram-fill" cx="48" cy="126" r="5" />
-      <circle class="diagram-signal diagram-fill" cx="48" cy="158" r="5" />
-      <circle class="diagram-signal diagram-fill" cx="48" cy="190" r="5" />
-      <path class="diagram-signal" d="M234 150h84" />
-      <path class="diagram-signal diagram-fill" d="m309 143 16 7-16 7z" />
-      <rect class="diagram-emphasis" x="354" y="65" width="238" height="170" rx="8" />
-      <path d="M382 201V101M382 201h180" />
-      <path class="diagram-signal" d="m399 181 34-32 35 14 39-55 38 28" />
-      <path d="M399 91h88" />
-    </g>
-  `),
-  'webrtc-voice-ai': wrapResolutionDiagram(`
-    <g class="diagram-shape">
-      <rect class="diagram-emphasis" x="70" y="72" width="132" height="156" rx="66" />
-      <rect x="116" y="98" width="40" height="76" rx="20" />
-      <path d="M100 157c0 32 16 48 36 48s36-16 36-48M136 205v23M108 228h56" />
-      <path class="diagram-signal" d="M232 110c25 0 25 80 50 80s25-80 50-80 25 80 50 80 25-80 50-80" />
-      <rect x="466" y="82" width="126" height="136" rx="8" />
-      <path d="M491 116h75M491 145h55M491 174h82" />
-      <circle class="diagram-signal diagram-fill" cx="490" cy="197" r="5" />
+      <rect x="48" y="66" width="184" height="168" rx="8" />
+      <path d="M72 96h87M72 126h120M72 156h104M72 186h92" />
+      <circle class="diagram-signal diagram-fill" cx="205" cy="96" r="5" />
+      <circle class="diagram-signal diagram-fill" cx="205" cy="156" r="5" />
+      <path class="diagram-signal" d="M232 150h104" />
+      <path class="diagram-signal diagram-fill" d="m327 143 16 7-16 7z" />
+      <rect class="diagram-emphasis" x="370" y="58" width="222" height="184" rx="8" />
+      <path d="M394 88h94M394 112h174" />
+      <rect x="394" y="136" width="46" height="72" rx="4" />
+      <rect x="457" y="136" width="46" height="72" rx="4" />
+      <rect x="520" y="136" width="46" height="72" rx="4" />
+      <path d="M403 151h28M403 169h21M466 151h28M466 169h19M529 151h28M529 169h22" />
+      <circle class="diagram-signal diagram-fill" cx="553" cy="195" r="5" />
     </g>
   `),
   'isro-xray-burst': wrapResolutionDiagram(`
@@ -165,7 +132,7 @@ function renderResolutionModel(project) {
 
   return `
     <figure class="product-model" data-project-visual="${project.slug}">
-      <div class="product-model-canvas">${resolutionDiagrams[project.slug] || resolutionDiagrams['feather-analysis']}</div>
+      <div class="product-model-canvas">${resolutionDiagrams[project.slug] || resolutionDiagrams.agentrelay}</div>
       <ol class="product-model-steps">${steps}</ol>
       <figcaption>${project.summary}</figcaption>
     </figure>
@@ -174,7 +141,7 @@ function renderResolutionModel(project) {
 
 export const RESOLUTION_VISUALS = {
   card(slug) {
-    return resolutionDiagrams[slug] || resolutionDiagrams['feather-analysis']
+    return resolutionDiagrams[slug] || resolutionDiagrams.agentrelay
   },
   githubIcon: resolutionGithubIcon,
   model: renderResolutionModel,

@@ -7,12 +7,9 @@ const themeStorageKey = 'swayam-resolution-theme'
 const projects = [
   ['reel2trip', 'Reel2Trip'],
   ['agentrelay', 'AgentRelay'],
-  ['murmur', 'Murmur'],
+  ['conversational-ai-visual-layer', 'Visual layer for conversational AI'],
   ['macos-intelligence-mcp', 'macOS Intelligence MCP'],
-  ['synthio', 'Synthio'],
-  ['fieldpulse', 'FieldPulse'],
-  ['feather-analysis', 'Feather call analysis'],
-  ['webrtc-voice-ai', 'WebRTC voice AI'],
+  ['cmux-agent-orchestrator', 'cmux Agent Orchestrator'],
   ['isro-xray-burst', 'ISRO X-ray burst automation'],
   ['journal-scraper', 'Journal scraper for data mining'],
 ]
@@ -24,7 +21,10 @@ const articles = [
   ['intelligence-at-the-speed-of-speech', 'Intelligence at the Speed of Speech'],
 ]
 
-const projectSlugs = new Set(projects.map(([slug]) => slug))
+const projectSlugs = new Set([
+  ...projects.map(([slug]) => slug),
+  'murmur',
+])
 const articleSlugs = new Set(articles.map(([slug]) => slug))
 
 // These are deliberately the public URLs from the static prototype. The React
@@ -41,6 +41,12 @@ const routes = [
     heading,
     kind: 'project',
   })),
+  {
+    label: 'project-murmur-legacy',
+    path: '/project.html?project=murmur',
+    heading: 'Visual layer for conversational AI',
+    kind: 'project',
+  },
   ...articles.map(([slug, heading]) => ({
     label: `article-${slug}`,
     path: `/articles/${slug}/`,
@@ -158,8 +164,8 @@ function recordInternalLinks(scope, links) {
 }
 
 function verifyContentCounts(scope, kind, counts) {
-  if (kind === 'work' && counts.projects !== 10) {
-    fail(scope, `expected 10 projects, got ${counts.projects}`)
+  if (kind === 'work' && counts.projects !== 7) {
+    fail(scope, `expected 7 projects, got ${counts.projects}`)
   }
 
   if (
@@ -179,7 +185,7 @@ function verifyContentCounts(scope, kind, counts) {
   if (
     kind === 'college'
     && (
-      counts.recognition !== 3
+      counts.recognition !== 4
       || counts.collegeProjects !== 2
       || counts.internships !== 4
       || counts.campus !== 2
@@ -187,7 +193,7 @@ function verifyContentCounts(scope, kind, counts) {
   ) {
     fail(
       scope,
-      `expected college counts 3/2/4/2; got ${JSON.stringify({
+      `expected college counts 4/2/4/2; got ${JSON.stringify({
         recognition: counts.recognition,
         projects: counts.collegeProjects,
         internships: counts.internships,

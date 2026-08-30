@@ -208,6 +208,64 @@ body[data-page='home'] .home-nav .theme-control:hover {
   color: var(--home-link);
 }
 
+.home-shipping-ledger {
+  border-top: 1px solid var(--ink-800);
+}
+
+.home-shipping-ledger li {
+  display: grid;
+  grid-template-columns: 5.25rem minmax(0, 1fr);
+  border-bottom: 1px solid var(--ink-850);
+}
+
+.home-shipping-ledger time {
+  padding: 1rem var(--space-4) 1rem 0;
+  color: var(--ink-500);
+  font-size: 0.7rem;
+  line-height: 1.55;
+}
+
+.home-shipping-ledger a {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.15rem var(--space-4);
+  padding: 1rem 0;
+}
+
+.home-shipping-ledger strong {
+  color: var(--ink-100);
+  font-size: 0.9rem;
+  font-weight: 560;
+  letter-spacing: -0.015em;
+  line-height: 1.45;
+}
+
+.home-shipping-ledger span {
+  grid-column: 1;
+  color: var(--ink-500);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.home-shipping-ledger i {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: var(--ink-500);
+  font-style: normal;
+  transition: color 150ms var(--ease-out), transform 180ms var(--ease-out);
+}
+
+.home-shipping-ledger a:hover strong,
+.home-shipping-ledger a:hover i {
+  color: var(--home-link);
+}
+
+.home-shipping-ledger a:hover i {
+  transform: translate(0.15rem, -0.15rem);
+}
+
 .home-records {
   border-top: 1px solid var(--ink-800);
 }
@@ -388,6 +446,10 @@ body[data-page='home'] .home-footer-inner {
     gap: var(--space-1);
   }
 
+  .home-shipping-ledger li {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+  }
+
   .home-chapter-link {
     gap: var(--space-4);
   }
@@ -419,7 +481,8 @@ body[data-page='home'] .home-footer-inner {
   .home-prose a,
   .home-source p a,
   .home-record strong,
-  .home-chapter-link i {
+  .home-chapter-link i,
+  .home-shipping-ledger i {
     transition: none;
   }
 
