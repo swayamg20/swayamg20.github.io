@@ -166,6 +166,10 @@ export function HomePage() {
             <p>
               I contribute to <ExternalLink href="https://github.com/livekit">LiveKit</ExternalLink>,{' '}
               <ExternalLink href="https://github.com/pipecat-ai/pipecat">Pipecat</ExternalLink>,{' '}
+              <ExternalLink href="https://github.com/The-PR-Agent/pr-agent">
+                PR-Agent
+              </ExternalLink>
+              ,{' '}
               <ExternalLink href="https://github.com/Priivacy-ai/spec-kitty">
                 Spec Kitty
               </ExternalLink>
