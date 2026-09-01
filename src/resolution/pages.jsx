@@ -8,6 +8,7 @@ import {
   projects,
   reading,
   recentlyShipped,
+  resumeUrl,
   writing,
 } from './content.js'
 import {
@@ -64,7 +65,7 @@ export function HomePage() {
                 <ExternalLink href="https://github.com/swayamg20">GitHub</ExternalLink>
                 <ExternalLink href="https://linkedin.com/in/swayamgupta20">LinkedIn</ExternalLink>
                 <ExternalLink href="https://x.com/swayamg20">X</ExternalLink>
-                <a href="/resume.pdf">Résumé</a>
+                <ExternalLink href={resumeUrl}>Résumé</ExternalLink>
               </div>
             </div>
           </div>
@@ -530,11 +531,11 @@ export function AboutPage() {
               <strong>@swayamg20</strong>
               <i aria-hidden="true">↗</i>
             </ExternalLink>
-            <a href="/resume.pdf">
+            <ExternalLink href={resumeUrl}>
               <span>Résumé</span>
               <strong>PDF</strong>
-              <i aria-hidden="true">↓</i>
-            </a>
+              <i aria-hidden="true">↗</i>
+            </ExternalLink>
           </div>
         </section>
 
@@ -737,7 +738,7 @@ export function CollegePage() {
 }
 
 function ProjectSource({ project }) {
-  if (!project.github) {
+  if (!project.github && !project.communityUrl) {
     return (
       <p className="project-source-private">
         <span>{project.repositoryLabel || 'Private repository'}</span>
@@ -746,15 +747,29 @@ function ProjectSource({ project }) {
   }
 
   return (
-    <ExternalLink
-      className="project-source-link"
-      href={project.github}
-      aria-label={`Open ${project.title} on GitHub`}
-    >
-      <GithubIcon />
-      <span>GitHub</span>
-      <i aria-hidden="true">↗</i>
-    </ExternalLink>
+    <div className="project-source-links">
+      {project.github ? (
+        <ExternalLink
+          className="project-source-link"
+          href={project.github}
+          aria-label={`Open ${project.title} on GitHub`}
+        >
+          <GithubIcon />
+          <span>GitHub</span>
+          <i aria-hidden="true">↗</i>
+        </ExternalLink>
+      ) : null}
+      {project.communityUrl ? (
+        <ExternalLink
+          className="project-source-link project-source-link-text"
+          href={project.communityUrl}
+          aria-label={`Open ${project.title} in Obsidian Community Plugins`}
+        >
+          <span>Obsidian Community</span>
+          <i aria-hidden="true">↗</i>
+        </ExternalLink>
+      ) : null}
+    </div>
   )
 }
 

@@ -15,6 +15,8 @@ export const writing = RESOLUTION_WRITING
 export const drafts = RESOLUTION_DRAFTS
 export const reading = RESOLUTION_READING
 export const visuals = RESOLUTION_VISUALS
+export const resumeUrl =
+  'https://drive.google.com/file/d/1I8Jb6nOEsZF2VQ9Vwd6w6zK1E8Pv7n5r/view?usp=sharing'
 
 const projectSlugAliases = {
   murmur: 'conversational-ai-visual-layer',

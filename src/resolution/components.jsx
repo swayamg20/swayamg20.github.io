@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useMemo, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { findProject, visuals } from './content.js'
+import { findProject, resumeUrl, visuals } from './content.js'
 
 const THEME_KEY = 'swayam-resolution-theme'
 const INTRO_KEY = 'swayam-resolution-intro-seen'
@@ -175,7 +175,9 @@ export function SiteFooter() {
               {label}
             </a>
           ))}
-          <a href="/resume.pdf">Résumé</a>
+          <a href={resumeUrl} target="_blank" rel="noreferrer">
+            Résumé
+          </a>
         </div>
       </div>
     </footer>

@@ -245,6 +245,7 @@ export const RESOLUTION_PROJECTS = [
     ],
     stack: ['TypeScript', 'Obsidian API', 'cmux', 'Markdown', 'Vitest', 'esbuild'],
     github: 'https://github.com/swayamg20/cmux-agent-orchestrator',
+    communityUrl: 'https://community.obsidian.md/plugins/cmux-agent-orchestrator',
   },
   {
     slug: 'isro-xray-burst',

@@ -680,6 +680,15 @@ body[data-page='about'] .practice-section li > p {
   margin: 0;
 }
 
+.project-source-links {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-4);
+}
+
 .project-page .project-source-link {
   display: grid;
   min-height: 2.75rem;
@@ -690,6 +699,10 @@ body[data-page='about'] .practice-section li > p {
   border: 0;
   color: var(--ink-500);
   font-size: 0.72rem;
+}
+
+.project-page .project-source-link-text {
+  grid-template-columns: auto auto;
 }
 
 .project-page .project-source-link > svg {
@@ -1006,8 +1019,13 @@ body[data-page='about'] .practice-section li > p {
   }
 
   .project-page .project-source-link,
-  .project-page .project-source-private {
+  .project-page .project-source-private,
+  .project-page .project-source-links {
     justify-self: start;
+  }
+
+  .project-page .project-source-links {
+    justify-content: flex-start;
   }
 
   .project-page .story-ledger {
